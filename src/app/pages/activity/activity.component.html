@@ -1,0 +1,20 @@
+<div class="container card-container">
+    <div class="card bg-info">
+      <div class="card-header">
+        <tabset class="nav-tabs-default">
+          <tab>
+            <get-activity
+             [activity]="activity"
+             [activityQuery]="onQuery.asObservable()"
+             >
+            </get-activity>  
+          </tab>
+          <tab>
+            <search-activity
+             (onActivityQuery)="passActivityQuery($event)">
+            </search-activity>
+          </tab>
+        </tabset>
+      </div>
+    </div>
+</div>

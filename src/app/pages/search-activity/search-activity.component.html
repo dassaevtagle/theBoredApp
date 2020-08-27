@@ -1,0 +1,76 @@
+<ng-template tabHeading>
+<i class="tim-icons icon-zoom-split"> </i> Search
+</ng-template>
+<div class="container">
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+        <div class="container col-lg-8">
+            <h4>Type</h4>
+        <div class="form-group text-white select">
+                <label for="type"></label>
+                <select name="type" id="type" [(ngModel)] = "queriedActivity.type">
+                    <option value="default" id="default-type" selected>All types</option>
+                    <option value="education">Education</option>
+                    <option value="recreational">Recreational</option>
+                    <option value="social">Social</option>
+                    <option value="diy">DIY</option>
+                    <option value="charity">Charity</option>
+                    <option value="cooking">Cooking</option>
+                    <option value="relaxation">Relaxation</option>
+                    <option value="music">Music</option>
+                    <option value="busywork">Busywork</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="container col-lg-8" [style.padding-bottom.px]="30"> 
+            <div class="row">
+                <div class="col">
+                    <h4>Participants</h4>
+                </div>
+                <div class="col">
+                    <h4 id="sliderNumberParticipants" style="float: right;"></h4>
+                </div>
+            </div>
+            <br>
+            <div class="slider slider-neutral" id="sliderDoubleParticipants"></div>
+        </div>
+
+        <div class="container col-lg-8" [style.padding-bottom.px]="30">
+            <div class="row">
+                <div class="col">
+                    <h4>Cost</h4>
+                </div>
+                <div class="col">
+                    <h5 id="sliderNumberCost" style="float: right;"></h5>
+                </div>
+            </div>
+            
+            <br>
+            <div class="slider slider-neutral" id="sliderDoubleCost"></div>
+        </div>
+        <div class="container col-lg-8" [style.padding-bottom.px]="30">
+            <div class="row">
+                <div class="col">
+                    <h4> Accessibility</h4>
+                </div>
+                <div class="col">
+                    <h4 id="sliderNumberAccessibility" style="float: right;"></h4>
+                </div>
+            </div>
+            
+            <br>
+            <div class="slider slider-neutral" id="sliderDoubleAccessibility" ></div>
+            <div class="container" [style.padding-top.px]="20">
+                <div class="row justify-content-center">
+                    <div class="col-sm-auto " >
+                        <button class="btn btn-warning text-white mr-1" (click)="reset()" style="size: 20;">
+                            <i class="tim-icons icon-refresh-01"></i> &nbsp; Reset
+                        </button>
+                        <button class="btn btn-success align-self-center">Apply</button>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form> 
+</div>

@@ -1,0 +1,145 @@
+<ng-template tabHeading>
+    <i class="tim-icons icon-spaceship"> </i> Activity
+  </ng-template>
+  
+  <div class="container">
+    <div class="row">
+        <div class="col-11">
+            <div class="card-title">
+                <h1 class="text-white">{{activity.activity}}!</h1>
+            </div>
+        </div>
+        <div class="col">
+            <button
+            class="btn btn-neutral btn-icon btn-simple btn-round mr-1 refresh-button"
+            type="button"
+            (click)="refresh()" 
+            data-animation="true"
+            data-container="body"
+            data-delay="100"
+            placement="left"
+            tooltip="Try another one!">
+            <i class="tim-icons icon-refresh-02"> </i>
+          </button>
+        </div>
+    </div>
+</div>
+            
+<div class="container">
+    <span *ngIf="activity.link != null" [ngStyle]="{'padding-bottom': '10px'}"
+        class="text-white">
+        <a class="btn btn-link mr-1 text-white" href="{{activity.link}}" target="_blank">{{activity.link}}</a>
+    </span> 
+</div>
+
+<div class="card-text container activity-type-container">
+    <div class="row">
+        <div class="col text-white" [ngStyle]="{'font-size': '20px'}"
+            title="Participants">
+            {{activity.participants}}<i class="tim-icons icon-single-02" [ngStyle]="{'padding-left': '8px', 'padding-bottom': '3px'}"></i>
+        </div>
+        <div class="col activity-type" [ngSwitch]="activity.type">
+            <span *ngSwitchCase="'education'" 
+                    class="badge badge-neutral "
+                    title="Activity type"
+                    >
+                    <i class="tim-icons icon-globe-2"></i>
+                    &nbsp;
+                    {{activity.type}} 
+            </span>
+            <span *ngSwitchCase="'recreational'" 
+                    class="badge badge-success "
+                    title="Activity type"
+                    >
+                    <i class="tim-icons icon-satisfied"></i>
+                    &nbsp;
+                    {{activity.type}} 
+            </span>
+            <span *ngSwitchCase="'social'" 
+                    class="badge badge-success "
+                    title="Activity type"
+                    >
+                    <i class="tim-icons icon-chat-33"></i>
+                    &nbsp;
+                    {{activity.type}} 
+            </span>
+            <span *ngSwitchCase="'diy'" 
+                    class="badge badge-default mr-1 "
+                    title="Activity type"
+                    >
+                    <i class="tim-icons icon-scissors"></i>
+                    &nbsp;
+                    {{activity.type}} 
+            </span>
+            <span *ngSwitchCase="'charity'" 
+                    class="badge badge-danger mr-1 "
+                    title="Activity type"
+                    >
+                    <i class="tim-icons icon-heart-2"></i>
+                    &nbsp;
+                    {{activity.type}} 
+            </span>
+            <span *ngSwitchCase="'cooking'" 
+                    class="badge badge-warning mr-1 "
+                    title="Activity type"
+                    >
+                    <i class="tim-icons icon-chart-pie-36"></i>
+                    &nbsp;
+                    {{activity.type}} 
+            </span>
+            <span *ngSwitchCase="'relaxation'" 
+                    class="badge badge-success mr-1 "
+                    title="Activity type"
+                    >
+                    <i class="tim-icons icon-sound-wave"></i>
+                    &nbsp;
+                    {{activity.type}} 
+            </span>
+            <span *ngSwitchCase="'music'" 
+                    class="badge badge-warning mr-1 "
+                    title="Activity type"
+                    >
+                    <i class="tim-icons icon-headphones"></i>
+                    &nbsp;
+                    {{activity.type}} 
+            </span>
+            <span *ngSwitchCase="'busywork'" 
+                    class="badge badge-default mr-1 "
+                    title="Activity type"
+                    >
+                    <i class="tim-icons icon-paper"></i>
+                    &nbsp;
+                    {{activity.type}} 
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="container" [ngStyle]="{'padding-top': '20px', 'padding-bottom': '15px'}">
+    <div class="row">
+        <div class="col"> 
+            <div class="progress-container progress-success" Title="Cost">
+                <span class="progress-badge text-white" [style.font-size.px]="12"> 
+                Cost 
+                </span>
+                <progressbar class="progress-bar-info" [value]="(activity.price * 100)">
+                    <span class="progress-value text-white" [style.font-size.px]="12">
+                     {{activity.price | transformDecimals}} 
+                    </span>
+                </progressbar>
+            </div>
+        </div>
+        <div class="col">
+            <div class="progress-container progress-success" Title="Accessibility" >
+                <span class="progress-badge text-white" [style.font-size.px]="12"> 
+                Accessibility 
+                </span>
+                <progressbar class="progress-bar-info" [value]="(activity.accessibility | accessibility)">
+                    <span class="progress-value text-white" [style.font-size.px]="12"> 
+                    {{activity.accessibility | accessibility}}%
+                    </span>
+                </progressbar>
+            </div>
+        </div>
+    </div>
+</div>
