@@ -1,3 +1,4 @@
+"use strict";
 /*
 =========================================================
 * BLK Design System Angular - v1.1.0
@@ -13,18 +14,14 @@
 
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
  */
-
-import { enableProdMode } from "@angular/core";
-import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
-
-import { AppModule } from "./app/app.module";
-import { environment } from "./environments/environment";
-import 'zone.js';
-
-if (environment.production) {
-  enableProdMode();
+exports.__esModule = true;
+var core_1 = require("@angular/core");
+var platform_browser_dynamic_1 = require("@angular/platform-browser-dynamic");
+var app_module_1 = require("./app/app.module");
+var environment_1 = require("./environments/environment");
+require("zone.js");
+if (environment_1.environment.production) {
+    core_1.enableProdMode();
 }
-
-platformBrowserDynamic()
-  .bootstrapModule(AppModule)
-  .catch(err => console.error(err));
+platform_browser_dynamic_1.platformBrowserDynamic()
+    .bootstrapModule(app_module_1.AppModule)["catch"](function (err) { return console.error(err); });
