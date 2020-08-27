@@ -9,7 +9,7 @@ import { IActivity } from './shared/activity';
 })
 export class ApiService {
   
-  url: string = 'http://www.boredapi.com/api/activity';
+  url: string = 'https://www.boredapi.com/api/activity';
 
   constructor(private http: HttpClient) { 
   }

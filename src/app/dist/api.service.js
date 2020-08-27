@@ -13,7 +13,7 @@ var operators_1 = require("rxjs/operators");
 var ApiService = /** @class */ (function () {
     function ApiService(http) {
         this.http = http;
-        this.url = 'http://www.boredapi.com/api/activity';
+        this.url = 'https://www.boredapi.com/api/activity';
     }
     ApiService.prototype.getRandomActivity = function () {
         return this.http.get(this.url)
