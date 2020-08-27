@@ -142,6 +142,14 @@ export class SearchActivityComponent implements OnInit {
       error: ''
     }
 
+  
+    swal.fire(
+      'Changes applied successfully',
+      '',
+      'success'
+    )
+  
+
     this.onActivityQuery.emit(this.queriedActivity);
 
   }
@@ -184,6 +192,13 @@ export class SearchActivityComponent implements OnInit {
             'Oops...',
             act.error,
             'error'
+          )
+        }
+        else{
+          swal.fire(
+            'Changes applied successfully',
+            '',
+            'success'
           )
         }}
       );

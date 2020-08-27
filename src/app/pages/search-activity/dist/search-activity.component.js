@@ -117,6 +117,7 @@ var SearchActivityComponent = /** @class */ (function () {
             accessibility: 0,
             error: ''
         };
+        sweetalert2_1["default"].fire('Changes applied successfully', '', 'success');
         this.onActivityQuery.emit(this.queriedActivity);
     };
     SearchActivityComponent.prototype.onSubmit = function (form) {
@@ -144,6 +145,9 @@ var SearchActivityComponent = /** @class */ (function () {
                 console.log('Error: ' + act.error);
                 console.log(act);
                 sweetalert2_1["default"].fire('Oops...', act.error, 'error');
+            }
+            else {
+                sweetalert2_1["default"].fire('Changes applied successfully', '', 'success');
             }
         });
         this.onActivityQuery.emit(this.queriedActivity);
